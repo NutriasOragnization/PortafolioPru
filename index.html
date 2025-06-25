@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="oscuro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portafolio de Marco</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="progress-bar"></div>
+  <button id="toggle-tema" class="tema-btn">🌓</button>
+  <button id="btn-arriba" class="scroll-top">↑</button>
+
+  <header class="navbar">
+    <h1 class="logo">Marco<span>.</span></h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="hero">
+      <h2>¡Hola! Soy <strong>Marco</strong></h2>
+      <p>Estudiante de Ingeniería en Sistemas, fan de la tecnología y los desafíos de código.</p>
+    </section>
+
+    <div class="separador"></div>
+
+    <section id="sobre-mi" class="card">
+      <h2>Sobre mí</h2>
+      <p>Soy creativo, autodidacta y enfocado en crear soluciones que inspiren y ayuden. Amo programar tanto como a los gatos.</p>
+    </section>
+
+    <section id="proyectos" class="card">
+      <h2>Proyectos</h2>
+      <div class="galeria">
+        <div class="project" data-modal="modal1">
+          <h3>App Finanzas</h3>
+          <p>Gestión de gastos personales con React.</p>
+        </div>
+        <div class="project" data-modal="modal2">
+          <h3>Red Social Mini</h3>
+          <p>Interfaz estilo Instagram con Vue y Firebase.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonios" class="card">
+      <h2>Testimonios</h2>
+      <div class="testimonios-slider">
+        <input type="radio" name="slider" id="testi1" checked>
+        <input type="radio" name="slider" id="testi2">
+        <input type="radio" name="slider" id="testi3">
+        
+        <div class="slides">
+          <label for="testi1" class="slide">
+            <p>"Miau 1🐱"<br><strong>- Misho, el Gato CTO</strong></p>
+          </label>
+          <label for="testi2" class="slide">
+            <p>"Miau2 🐱"<br><strong>- Prof. Lara</strong></p>
+          </label>
+          
+        </div>
+
+        <div class="dots">
+          <label for="testi1"></label>
+          <label for="testi2"></label>
+          <label for="testi3"></label>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="card">
+      <h2>Blog / Artículos</h2>
+      <p>Me gusta compartir lo que aprendo. Aquí van algunos:</p>
+      <ul>
+        <li><a href="#" target="_blank">🚀 Cómo estructurar tu primer proyecto Vue</a></li>
+        <li><a href="#" target="_blank">🧠 Pensando en Componentes: React a fondo</a></li>
+      </ul>
+    </section>
+
+    <section id="contacto" class="card">
+      <h2>Contacto</h2>
+      <form id="form-contacto">
+        <input type="text" name="nombre" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu email" required />
+        <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+        <p id="gracias" class="gracias">¡Gracias por tu mensaje! 📨</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Marco. Con ❤️, café y código. Gato verificado ✅</p>
+    <div class="redes">
+      <a href="https://github.com/https://github.com/LoonsF" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/tuUsuario" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://twitter.com/tuUsuario" target="_blank" rel="noopener">Twitter</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

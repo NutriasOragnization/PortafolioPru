@@ -1,0 +1,263 @@
+:root {
+  --bg: #0f172a;
+  --fg: #f8fafc;
+  --accent: #3b82f6;
+  --glass: rgba(255,255,255,0.05);
+  --shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+[data-theme="claro"] {
+  --bg: #f9fafb;
+  --fg: #1e293b;
+  --accent: #2563eb;
+  --glass: rgba(0,0,0,0.05);
+  --shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: var(--glass);
+  backdrop-filter: blur(20px) saturate(150%);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.05);
+  z-index: 10;
+}
+
+/*Me olvido esta cosa aveces*/
+.logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+.logo span {
+  color: var(--accent);
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--fg);
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.nav-links a:hover {
+  color: var(--accent);
+  transform: scale(1.05);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+#hero {
+  text-align: center;
+  padding: 4rem 0;
+}
+#hero h2 {
+  font-size: 2.5rem;
+  animation: popIn 1s ease forwards;
+}
+@keyframes popIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.card {
+  background: var(--glass);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.4s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.01);
+}
+
+.separador {
+  height: 4rem;
+}
+
+.galeria {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+.project {
+  padding: 1rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.project:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-8px);
+}
+
+.tema-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+  padding: 0.5rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+#form-contacto input,
+#form-contacto textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: none;
+}
+#form-contacto button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+#form-contacto button:hover {
+  background: #1d4ed8;
+}
+.gracias {
+  display: none;
+  margin-top: 1rem;
+  color: green;
+}
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--accent);
+  width: 0%;
+  z-index: 1000;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+footer .redes {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+footer .redes a {
+  text-decoration: none;
+  color: var(--fg);
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+footer .redes a:hover {
+  color: var(--accent);
+  transform: scale(1.05);
+}
+
+.testimonios-slider {
+  position: relative;
+}
+.testimonios-slider input[type="radio"] {
+  display: none;
+}
+.slides {
+  display: flex;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.7s ease-in-out;
+}
+.slide {
+  min-width: 100%;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.05);
+  transition: transform 0.5s ease;
+}
+.testimonios-slider #testi1:checked ~ .slides {
+  transform: translateX(0%);
+}
+.testimonios-slider #testi2:checked ~ .slides {
+  transform: translateX(-100%);
+}
+.testimonios-slider #testi3:checked ~ .slides {
+  transform: translateX(-200%);
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+.dots label {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.animar {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/*Ando aburrido pasen juegos*/
